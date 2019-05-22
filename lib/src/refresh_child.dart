@@ -85,7 +85,7 @@ class DefaultRefreshChild extends RefreshChild {
   DefaultRefreshChild({
     RefreshWidgetController controller,
     this.showState: true,
-    this.showLastUpdate: true,
+    this.showLastUpdate: false,
     this.icon,
     DefaultRefreshLocal local,
     this.up: true,
@@ -244,7 +244,7 @@ class _DefaultRefreshHeaderState extends State<DefaultRefreshChild>
     List<Widget> row = [
       _state == RefreshState.loading
           ? new SizedBox(
-              width: 20.0, height: 20.0, child: new CircularProgressIndicator())
+              width: 20.0, height: 20.0, child: new CircularProgressIndicator(size: 2.0))
           : new RotationTransition(
               turns: _animation,
               child: widget.icon,
