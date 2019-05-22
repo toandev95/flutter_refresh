@@ -16,6 +16,21 @@ class DefaultRefreshLocal {
           releaseToRefresh: releaseToRefresh,
           pullDownToRefresh: pullDownToRefresh,
           pullUpToRefresh: pullUpToRefresh);
+  
+  static DefaultRefreshLocal vi(
+          {String loading: "đang tải ...",
+          String error: 'lỗi ...',
+          String pullDownToRefresh: "kéo xuống",
+          String pullUpToRefresh: "đẩy lên",
+          String releaseToRefresh: "thả ra",
+          String lastUpdate = "cập nhật lúc"}) =>
+      new DefaultRefreshLocal(
+          error: error,
+          lastUpdate: lastUpdate,
+          loading: loading,
+          releaseToRefresh: releaseToRefresh,
+          pullDownToRefresh: pullDownToRefresh,
+          pullUpToRefresh: pullUpToRefresh);
 
   static DefaultRefreshLocal zh(
           {String loading: "加载中...",
@@ -74,7 +89,7 @@ class DefaultRefreshChild extends RefreshChild {
     this.icon,
     DefaultRefreshLocal local,
     this.up: true,
-  })  : this.local = local == null ? DefaultRefreshLocal.zh() : local,
+  })  : this.local = local == null ? DefaultRefreshLocal.vi() : local,
         super(controller: controller);
 
   @override
