@@ -244,7 +244,7 @@ class _DefaultRefreshHeaderState extends State<DefaultRefreshChild>
     List<Widget> row = [
       _state == RefreshState.loading
           ? new SizedBox(
-              width: 20.0, height: 20.0, child: new CircularProgressIndicator(size: 2.0))
+              width: 20.0, height: 20.0, child: new CircularProgressIndicator(strokeWidth: 2.0))
           : new RotationTransition(
               turns: _animation,
               child: widget.icon,
